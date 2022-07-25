@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>抓包分析https | CLOUDERHEM</title><meta name="keywords" content="https"><meta name="author" content="CLOUDERHEM"><meta name="copyright" content="CLOUDERHEM"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="抓包分析https数据包说明 192.168.123.1 为服务端 192.168.123.48 为客户端  抓包分析1. 三次握手建立通信https同使用tcp&#x2F;ip协议, 客户端和服务端进行通信前也需要进过基础的三次握手     2. 客户端发送Client Hello  该请求将客户端支持的所有SSL&#x2F;TSL协议版本, 加密算法和一个Random随机数发送给服务端   3. 服务端Serve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="抓包分析https">
+<meta property="og:url" content="https://clouderhem.co/2022/07/25/https/index.html">
+<meta property="og:site_name" content="CLOUDERHEM">
+<meta property="og:description" content="抓包分析https数据包说明 192.168.123.1 为服务端 192.168.123.48 为客户端  抓包分析1. 三次握手建立通信https同使用tcp&#x2F;ip协议, 客户端和服务端进行通信前也需要进过基础的三次握手     2. 客户端发送Client Hello  该请求将客户端支持的所有SSL&#x2F;TSL协议版本, 加密算法和一个Random随机数发送给服务端   3. 服务端Serve">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://clouderhem.co/img/cover.webp">
+<meta property="article:published_time" content="2022-07-25T06:27:29.000Z">
+<meta property="article:modified_time" content="2022-07-25T08:54:47.475Z">
+<meta property="article:author" content="CLOUDERHEM">
+<meta property="article:tag" content="https">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://clouderhem.co/img/cover.webp"><link rel="shortcut icon" href="../../../../img/favicon.png"><link rel="canonical" href="https://clouderhem.co/2022/07/25/https/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="../../../../css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '抓包分析https',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-25 16:54:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="../../../../img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="../../../../archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="../../../../tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="../../../../categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('../../../../img/cover.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="../../../../index.html">CLOUDERHEM</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">抓包分析https</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-07-25T06:27:29.000Z" title="Created 2022-07-25 14:27:29">2022-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-07-25T08:54:47.475Z" title="Updated 2022-07-25 16:54:47">2022-07-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">875</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>2min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="抓包分析https"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="抓包分析https数据包"><a href="#抓包分析https数据包" class="headerlink" title="抓包分析https数据包"></a>抓包分析<em>https数据包</em></h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li><code>192.168.123.1</code> 为服务端</li>
+<li><code>192.168.123.48</code> 为客户端</li>
+</ul>
+<h2 id="抓包分析"><a href="#抓包分析" class="headerlink" title="抓包分析"></a>抓包分析</h2><h3 id="1-三次握手建立通信"><a href="#1-三次握手建立通信" class="headerlink" title="1. 三次握手建立通信"></a>1. 三次握手建立通信</h3><p>https同使用<code>tcp/ip</code>协议, 客户端和服务端进行通信前也需要进过基础的三次握手</p>
+<img src="clipboard.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard.png">
+
+
+
+<h3 id="2-客户端发送Client-Hello"><a href="#2-客户端发送Client-Hello" class="headerlink" title="2. 客户端发送Client Hello"></a>2. 客户端发送Client Hello</h3><img src="clipboard-16587315154632.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-16587315154632.png">
+
+<p>该请求将客户端支持的所有<code>SSL/TSL</code>协议版本, 加密算法和一个<code>Random</code>随机数发送给服务端</p>
+<img src="clipboard-16587315197084.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-16587315197084.png">
+
+<h3 id="3-服务端Server-Hello"><a href="#3-服务端Server-Hello" class="headerlink" title="3. 服务端Server Hello"></a>3. 服务端Server Hello</h3><img src="clipboard-16587316484728.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-16587316484728.png">
+
+<hr>
+<p>服务端发送一个<code>Server Hello</code>请求, 表示自己从客户端的<code>Client Hello</code>信息中选择的加密算法, 并返回了自己生成的随机数</p>
+<img src="clipboard-165873165281210.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-165873165281210.png">
+
+<h3 id="4-服务端-Server-Hello-Done"><a href="#4-服务端-Server-Hello-Done" class="headerlink" title="4. 服务端 Server Hello Done"></a>4. 服务端 Server Hello Done</h3><p>服务端发送<code>Server Hello Done</code>表示当前<code>Hello</code>过程结束, 该请求包含了服务端的<code>SSL</code>证书信息</p>
+<img src="clipboard-165873189084412.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-165873189084412.png">
+
+<h3 id="5-客户端Client-Key-Exchange"><a href="#5-客户端Client-Key-Exchange" class="headerlink" title="5. 客户端Client Key Exchange"></a>5. 客户端Client Key Exchange</h3><p>Change Cipher Spec: 客户端通知服务端后面再发送的消息都会使用前面协商出来的秘钥加密了，是一条事件消息</p>
+<p>Encrypted Handshake Message: 这一步对应的是 Client Finish 消息，客户端握手结束通知, 表示客户端的握手阶段已经结束</p>
+<img src="clipboard-165873209826416.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-165873209826416.png">
+
+<hr>
+<p>客户端使用服务器发送过来的<code>Certificate</code>中的公钥加密不重数, 作为前主秘钥发送给服务器</p>
+<img src="clipboard-165873205886914.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-165873205886914.png">
+
+<h3 id="6-服务端客户端秘钥生成"><a href="#6-服务端客户端秘钥生成" class="headerlink" title="6. 服务端客户端秘钥生成"></a>6. 服务端客户端秘钥生成</h3><ol>
+<li><p>客户端将<strong>前主秘钥</strong>使用<code>certificate</code>中的公钥加密后发送给服务端后, 客户端使用<code>certificate</code>中的私钥解密之后得到<strong>前主秘钥</strong></p>
+</li>
+<li><p>客户端和服务端使用相同<strong>前主秘钥</strong>和<strong>算法</strong>生成<strong>主秘钥</strong></p>
+</li>
+<li><p>客户端和服务端再次通过<strong>主秘钥</strong>生成<strong>四个密码</strong></p>
+<p> <code>MAC</code>为报文鉴定码</p>
+<ul>
+<li><p><code>E1</code> : 客户端发送到服务端信息加密密码</p>
+</li>
+<li><p><code>M1</code>: 客户端到服务端的<code>MAC</code>的加密密码</p>
+</li>
+<li><p><code>E2</code>: 服务端发送给客户端信息加密密码</p>
+</li>
+<li><p><code>M2</code>: 服务端到客户端的<code>MAC</code>加密密码</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>​    </p>
+<h3 id="7-服务端-New-Session-Ticket"><a href="#7-服务端-New-Session-Ticket" class="headerlink" title="7. 服务端 New Session Ticket"></a>7. 服务端 New Session Ticket</h3><ul>
+<li><p>New Session Ticket: 来确认密钥交换和认证过程已经成功了。可以传输加密的数据了</p>
+</li>
+<li><p>Change Cipher Spec: 服务端通知客户端后面再发送的消息都会使用前面协商出来的秘钥加密了</p>
+</li>
+<li><p>Encrypted Handshake Message: 服务端握手结束通知, 表示服务端的<code>SSL</code>握手阶段已经结束</p>
+</li>
+</ul>
+<img src="clipboard-165873229705918.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-165873229705918.png">
+
+<hr>
+<img src="clipboard-165873233731320.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-165873233731320.png">
+
+
+
+<h3 id="8-客户端和服务端通信"><a href="#8-客户端和服务端通信" class="headerlink" title="8. 客户端和服务端通信"></a>8. 客户端和服务端通信</h3><h4 id="https数据包格式"><a href="#https数据包格式" class="headerlink" title="https数据包格式"></a>https数据包格式</h4><p>TLS报文格式为: <code>类型 + 版本 + 长度 + (数据 + MAC)</code></p>
+<p>其中<code>数据+MAC</code>是加密的, 秘钥使用的是前面的<code>E</code></p>
+<p>其中 <code>MAC =  hash(数据 + M)</code>  <code>M</code>是前面提到的<code>MAC</code>的加密密码</p>
+<hr>
+<img src="clipboard-165873273671622.png" class="" title="&#x2F;2022&#x2F;07&#x2F;25&#x2F;https&#x2F;clipboard-165873273671622.png">
+
+
+
+<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><h3 id="数字证书内容"><a href="#数字证书内容" class="headerlink" title="数字证书内容"></a>数字证书内容</h3><p>包括了加密后服务器的公钥、权威机构的信息、服务器域名，还有经过CA私钥签名之后的证书内容（经过先通过Hash函数计算得到证书数字摘要，然后用权威机构私钥加密数字摘要得到数字签名)，签名计算方法以及证书对应的域名。</p>
+<h3 id="配置https"><a href="#配置https" class="headerlink" title="配置https"></a>配置https</h3><h4 id="1-获取SSL-TSL证书"><a href="#1-获取SSL-TSL证书" class="headerlink" title="1. 获取SSL/TSL证书"></a>1. 获取<code>SSL/TSL</code>证书</h4><ul>
+<li>域名服务器厂商提供</li>
+<li><a target="_blank" rel="noopener" href="https://freessl.cn/">FreeSSL</a> </li>
+<li>OpenSSL自签证书 (不被浏览器信任)</li>
+<li>购买付费证书, 证书价格一般都很高</li>
+</ul>
+<h4 id="2-配置证书"><a href="#2-配置证书" class="headerlink" title="2. 配置证书"></a>2. 配置证书</h4><p>nginx.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	listen 443 ssl http2;</span><br><span class="line">	listen [::]:443 ssl http2;</span><br><span class="line"></span><br><span class="line">	server_name *.example.com;</span><br><span class="line"></span><br><span class="line">	# SSL</span><br><span class="line">	ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;</span><br><span class="line">	ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;</span><br><span class="line">	ssl_trusted_certificate /etc/letsencrypt/live/example.com/chain.pem;</span><br><span class="line">	# 将80端口http重定向到https</span><br><span class="line">	return 301 https://example.com$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>如有错误请联系作者更正</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://clouderhem.co">CLOUDERHEM</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://clouderhem.co/2022/07/25/https/">https://clouderhem.co/2022/07/25/https/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="../../../../tags/https/">https</a></div><div class="post_share"><div class="social-share" data-image="../../../../img/cover.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="../../13/git/"><img class="next-cover" src="../../../../img/cover.webp" onerror="onerror=null;src='../../../../img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Git 提高</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="../../../../img/avatar.jpg" onerror="this.onerror=null;this.src='../../../../img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CLOUDERHEM</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="../../../../archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="../../../../tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="../../../../categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CLOUDERHEM"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CLOUDERHEM" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="../../../../edcop.club@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Talk is cheap, show me your code</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90https%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-number">1.</span> <span class="toc-text">抓包分析https数据包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">抓包分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%BB%BA%E7%AB%8B%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 三次握手建立通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8F%91%E9%80%81Client-Hello"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 客户端发送Client Hello</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9C%8D%E5%8A%A1%E7%AB%AFServer-Hello"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 服务端Server Hello</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9C%8D%E5%8A%A1%E7%AB%AF-Server-Hello-Done"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 服务端 Server Hello Done</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AE%A2%E6%88%B7%E7%AB%AFClient-Key-Exchange"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 客户端Client Key Exchange</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%A7%98%E9%92%A5%E7%94%9F%E6%88%90"><span class="toc-number">1.2.6.</span> <span class="toc-text">6. 服务端客户端秘钥生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%9C%8D%E5%8A%A1%E7%AB%AF-New-Session-Ticket"><span class="toc-number">1.2.7.</span> <span class="toc-text">7. 服务端 New Session Ticket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.8.</span> <span class="toc-text">8. 客户端和服务端通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#https%E6%95%B0%E6%8D%AE%E5%8C%85%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.8.1.</span> <span class="toc-text">https数据包格式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0"><span class="toc-number">1.3.</span> <span class="toc-text">附加</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%86%85%E5%AE%B9"><span class="toc-number">1.3.1.</span> <span class="toc-text">数字证书内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEhttps"><span class="toc-number">1.3.2.</span> <span class="toc-text">配置https</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%8E%B7%E5%8F%96SSL-TSL%E8%AF%81%E4%B9%A6"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1. 获取SSL&#x2F;TSL证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E8%AF%81%E4%B9%A6"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">2. 配置证书</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E"><span class="toc-number">1.4.</span> <span class="toc-text">声明</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="" title="抓包分析https"><img src="../../../../img/cover.webp" onerror="this.onerror=null;this.src='../../../../img/404.jpg'" alt="抓包分析https"/></a><div class="content"><a class="title" href="" title="抓包分析https">抓包分析https</a><time datetime="2022-07-25T06:27:29.000Z" title="Created 2022-07-25 14:27:29">2022-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../../13/git/" title="Git 提高"><img src="../../../../img/cover.webp" onerror="this.onerror=null;this.src='../../../../img/404.jpg'" alt="Git 提高"/></a><div class="content"><a class="title" href="../../13/git/" title="Git 提高">Git 提高</a><time datetime="2022-07-13T09:50:57.000Z" title="Created 2022-07-13 17:50:57">2022-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../../05/online-compiler/" title="Online Compiler"><img src="../../../../img/cover.webp" onerror="this.onerror=null;this.src='../../../../img/404.jpg'" alt="Online Compiler"/></a><div class="content"><a class="title" href="../../05/online-compiler/" title="Online Compiler">Online Compiler</a><time datetime="2022-07-05T09:50:57.000Z" title="Created 2022-07-05 17:50:57">2022-07-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By CLOUDERHEM</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="../../../../js/utils.js"></script><script src="../../../../js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
