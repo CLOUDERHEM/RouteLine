@@ -1,3 +1,10 @@
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9b3e7e89a0f4bb60b366cd1a6acfdbae";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
   let blogNameWidth, menusWidth, searchWidth, $nav
   let mobileSidebarOpen = false
